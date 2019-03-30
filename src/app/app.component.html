@@ -1,28 +1,4 @@
 <div class="container">
-    <div class="row">
-        <table class="table">
-            <thead class="thead-dark">
-                <tr>
-                    <th>ID</th>
-                    <th>Nom complet</th>
-                    <th>Heureux ?</th>
-                    <th>Hobbies</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let user of users;">
-                    <td>{{user.id}}</td>
-                    <td>{{user.fullName | uppercase}}</td>
-                    <td [ngClass]="{
-                        'table-success': user.happy,
-                        'table-danger': !user.happy
-                    }">{{user.happy}}</td>
-                    <td>{{user.hobbies}}</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    <div class="row">
-        <pre>{{users | json}}</pre>
-    </div>
+    <h1>USER</h1>
+    <user-dashboard></user-dashboard>
 </div>
