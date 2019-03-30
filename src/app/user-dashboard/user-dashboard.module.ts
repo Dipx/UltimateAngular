@@ -6,14 +6,14 @@ import { UserDashboardComponent } from './containers/user-dashboard/user-dashboa
 
 // components
 import { UserCountComponent } from './components/user-count/user-count.component'
-import { UserDetailComponent } from './components/user-detail/user-detail.component'
+import { UserDetailRowComponent } from './components/user-detail/user-detail-row.component'
 
 
 @NgModule({
     declarations: [
         UserDashboardComponent,
         UserCountComponent,
-        UserDetailComponent
+        UserDetailRowComponent
     ],
     imports: [
         CommonModule

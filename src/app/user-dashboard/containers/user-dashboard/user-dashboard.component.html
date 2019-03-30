@@ -7,26 +7,18 @@
                     <th>Nom complet</th>
                     <th>Heureux ?</th>
                     <th>Hobbies</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let user of users;">
-                    <td>{{user.id}}</td>
-                    <td>{{user.fullName | uppercase}}</td>
-                    <td [ngClass]="{
-                        'table-success': user.happy,
-                        'table-danger': !user.happy
-                    }">{{user.happy}}</td>
-                    <td>{{user.hobbies}}</td>
-                </tr>
+                <user-table *ngFor="let user of users;" [item]="user" (remove)="handleRemove($event)" (edit)="handleEdit($event)"></user-table>
             </tbody>
         </table>
     </div>
     <div class="row">
-        <user-count></user-count>
+        <user-count [items]="users"></user-count>
     </div>
     <div class="row">
-        <user-detail></user-detail>
     </div>
     <div class="row">
         <pre>{{users | json}}</pre>

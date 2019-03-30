@@ -29,4 +29,19 @@ export class UserDashboardComponent implements OnInit {
 			hobbies: []
 		}]
 	}
+
+	handleRemove(event: User) {
+		this.users = this.users.filter((user : User) => {
+			return user.id !== event.id;
+		})
+	}
+	handleEdit(event: User) {
+		this.users = this.users.map((user: User) => {
+			if(user.id === event.id) {
+				user = Object.assign({}, user, event);
+			}
+			return user;
+		})
+		console.log(event);
+	}
 }
