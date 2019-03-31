@@ -14,6 +14,13 @@ export class UserViewerComponent implements OnInit {
 
     constructor(private userDashboardService: UserDashboardService) {}
 
+    onUpdateUser(event: User) {
+        console.log("update:", event)
+        this.userDashboardService
+            .updateUser(event)
+            .subscribe((data: User) => this.user = Object.assign({}, this.user, data), (error: any) => console.log(error));
+    }
+
     ngOnInit () {
         this.userDashboardService
             .getUser(3)

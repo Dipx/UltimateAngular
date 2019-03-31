@@ -11,10 +11,9 @@
       ]
     },
     {
+      "fullName": "Lew dark angela",
       "id": 3,
-      "fullName": "Lew dark angel",
-      "happy": false,
-      "hobbies": ["pété dé cheuvilles"]
+      "happy": true
     }
   ]
 }

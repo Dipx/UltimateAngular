@@ -1,6 +1,7 @@
 <div>
     <user-form 
-        [detail]='user'>
-        
+        [detail]='user'
+        (update)="onUpdateUser($event)"
+        >        
     </user-form>
 </div>
