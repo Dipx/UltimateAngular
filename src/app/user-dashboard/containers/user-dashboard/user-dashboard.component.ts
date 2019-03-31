@@ -14,7 +14,7 @@ export class UserDashboardComponent implements OnInit {
 	constructor(private userService: UserDashboardService) {	}
 
 	ngOnInit() {
-		this.users = this.userService.getUsers();
+		this.userService.getUsers().subscribe((data: User[]) => this.users = data["users"]);
 	}
 
 	handleRemove(event: User) {

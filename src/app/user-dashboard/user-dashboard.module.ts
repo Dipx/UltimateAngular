@@ -1,5 +1,6 @@
-import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http'
 
 // containers
 import { UserDashboardComponent } from './containers/user-dashboard/user-dashboard.component';
@@ -19,7 +20,8 @@ import { UserDashboardService } from './user-dashboard.service'
         UserDetailRowComponent
     ],
     imports: [
-        CommonModule
+        CommonModule,
+        HttpClientModule
     ],
     exports: [
         UserDashboardComponent
