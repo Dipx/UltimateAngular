@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { User } from '../../containers/user-dashboard/models/user.interface'
+import { User } from '../../models/user.interface'
 
 @Component({
     selector: 'user-count',

@@ -8,6 +8,9 @@ import { UserDashboardComponent } from './containers/user-dashboard/user-dashboa
 import { UserCountComponent } from './components/user-count/user-count.component'
 import { UserDetailRowComponent } from './components/user-detail/user-detail-row.component'
 
+// services
+import { UserDashboardService } from './user-dashboard.service'
+
 
 @NgModule({
     declarations: [
@@ -20,6 +23,9 @@ import { UserDetailRowComponent } from './components/user-detail/user-detail-row
     ],
     exports: [
         UserDashboardComponent
+    ],
+    providers: [
+        UserDashboardService
     ]
 })
 export class UserDashboardModule {}
