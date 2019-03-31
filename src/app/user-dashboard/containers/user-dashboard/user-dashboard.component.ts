@@ -14,7 +14,7 @@ export class UserDashboardComponent implements OnInit {
 	constructor(private userService: UserDashboardService) {	}
 
 	ngOnInit() {
-		this.userService.getUsers().subscribe((data: User[]) => this.users = data);
+		this.userService.getUsers().subscribe((data: User[]) => this.users = data, (error: any) => console.log(error));
 	}
 
 	handleRemove(event: User) {
@@ -23,7 +23,7 @@ export class UserDashboardComponent implements OnInit {
 				this.users = this.users.filter((user : User) => {
 					return user.id !== event.id;
 				})
-			})
+			}, (error: any) => console.log(error))
 	}
 	handleEdit(event: User) {
 		this.userService
@@ -33,6 +33,6 @@ export class UserDashboardComponent implements OnInit {
 					user = Object.assign({}, user, event);
 				}
 				return user;
-			});
+			}, (error: any) => console.log(error));
 	}
 }
