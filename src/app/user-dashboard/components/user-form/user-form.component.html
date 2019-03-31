@@ -1,0 +1,44 @@
+<form #form="ngForm" novalidate>
+    {{detail | json}}
+    <div class="form-group">
+        <label for="fullName">User full name: </label>
+        <input class="form-control"
+            required
+            #fullName="ngModel"
+            type="text"
+            name="fullName"
+            [ngModel]="detail?.fullName">
+        <small *ngIf="fullName.errors?.required" class="form-text invalid">Votre nom est requis.</small>
+    </div>
+    <div class="form-group">
+        <label for="id">User ID:</label>
+        <input class="form-control"
+            type="number"
+            name="id"
+            [ngModel]="detail?.id">
+    </div>
+    <div class="form-group">
+        <div>Are you happy ?</div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input"
+                type="radio"
+                name="happy"
+                id="happy1"
+                [value]="true"
+                [ngModel]="detail?.happy">
+                <label for="happy1" class="form-check-label">Yes</label>
+        </div>
+        <div class="form-check form-check-inline">
+                <input class="form-check-input"
+                    type="radio"
+                    name="happy"
+                    id="happy2"
+                    [value]="false"
+                    [ngModel]="detail?.happy">
+                    <label for="happy2" class="form-check-label">No</label>
+            </div>
+    </div>
+    {{form.value | json}}
+    {{form.valid | json}}
+    {{form.invalid | json}}
+</form>

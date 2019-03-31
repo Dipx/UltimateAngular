@@ -24,6 +24,18 @@ export class UserDashboardService {
             );
     }
 
+    getUser(id: number): Observable<any> {
+        return this.http
+            .get(`${USER_API}/${id}`)
+            .pipe(
+                map((response: HttpResponse<User>) => {
+                    return response
+                })
+            ).pipe(
+                catchError((error: any) => Observable.throw(error.json()))
+            );
+    }
+
     updateUser(user: User): Observable<any> {
 
         // CUSTOM HEADERS/OPTIONS
