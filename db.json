@@ -1,0 +1,20 @@
+{
+  "users": [
+    {
+      "id": 2,
+      "fullName": "Emmy Gze",
+      "happy": true,
+      "hobbies": [
+        "Knitting",
+        "Camping",
+        "Swimming"
+      ]
+    },
+    {
+      "id": 3,
+      "fullName": "Lew dark angel",
+      "happy": false,
+      "hobbies": []
+    }
+  ]
+}

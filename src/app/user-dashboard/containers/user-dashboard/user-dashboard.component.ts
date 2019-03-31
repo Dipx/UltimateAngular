@@ -14,21 +14,25 @@ export class UserDashboardComponent implements OnInit {
 	constructor(private userService: UserDashboardService) {	}
 
 	ngOnInit() {
-		this.userService.getUsers().subscribe((data: User[]) => this.users = data["users"]);
+		this.userService.getUsers().subscribe((data: User[]) => this.users = data);
 	}
 
 	handleRemove(event: User) {
-		this.users = this.users.filter((user : User) => {
-			return user.id !== event.id;
-		})
+		this.userService.removeUser(event)
+			.subscribe((data: User) => {
+				this.users = this.users.filter((user : User) => {
+					return user.id !== event.id;
+				})
+			})
 	}
 	handleEdit(event: User) {
-		this.users = this.users.map((user: User) => {
-			if(user.id === event.id) {
-				user = Object.assign({}, user, event);
-			}
-			return user;
-		})
-		console.log(event);
+		this.userService
+			.updateUser(event)
+			.subscribe((user: User) => {
+				if(user.id === event.id) {
+					user = Object.assign({}, user, event);
+				}
+				return user;
+			});
 	}
 }
